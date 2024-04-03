@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "singularName": "section",
+    "pluralName": "sections",
+    "displayName": "Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 99,
+      "unique": true,
+      "private": true
+    },
+    "Header": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "Text": {
+      "type": "blocks"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Caption": {
+      "type": "string"
+    },
+    "SortOrder": {
+      "type": "integer",
+      "required": true
+    },
+    "BgImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "BgImageOpacity": {
+      "type": "decimal",
+      "default": 0.5,
+      "max": 1,
+      "min": 0
+    },
+    "BgFilterOpacity": {
+      "type": "decimal",
+      "default": 0.5,
+      "max": 1,
+      "min": 0
+    }
+  }
+}
