@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 99,
+      "unique": true,
+      "private": true
+    },
+    "BgImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "BgImageOpacity": {
+      "type": "decimal",
+      "max": 1,
+      "min": 0,
+      "default": 0.5
+    },
+    "BgFilterOpacity": {
+      "type": "decimal",
+      "default": 0.5,
+      "max": 1,
+      "min": 0
+    }
+  }
+}

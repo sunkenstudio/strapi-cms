@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 255,
+      "private": true
+    },
+    "Header": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "Subheader": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "Button1": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "Button2": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Text": {
+      "type": "blocks"
+    },
+    "BgImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "BgFilterOpacity": {
+      "type": "decimal",
+      "default": 0.5,
+      "min": 0,
+      "max": 1
+    },
+    "BgImageOpacity": {
+      "type": "decimal",
+      "default": 0.5,
+      "max": 1,
+      "min": 0
+    }
+  }
+}
