@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_common_fonts",
+  "info": {
+    "displayName": "Font",
+    "icon": "bold",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "private": true
+    },
+    "Url": {
+      "type": "string",
+      "required": true
+    },
+    "Family": {
+      "type": "string"
+    }
+  }
+}
