@@ -8,10 +8,6 @@ export interface CommonFont extends Schema.Component {
     description: '';
   };
   attributes: {
-    Name: Attribute.String &
-      Attribute.Required &
-      Attribute.Private &
-      Attribute.Unique;
     Url: Attribute.String & Attribute.Required;
     Family: Attribute.String;
   };
