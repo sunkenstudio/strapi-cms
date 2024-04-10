@@ -874,6 +874,10 @@ export interface ApiContactContact extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<0.5>;
+    Fields: Attribute.JSON;
+    SendTo: Attribute.Email &
+      Attribute.Required &
+      Attribute.DefaultTo<'dan@sunkenstudio.com'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
