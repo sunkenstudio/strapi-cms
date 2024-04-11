@@ -27,31 +27,8 @@
       "type": "string",
       "maxLength": 255
     },
-    "Button1": {
-      "type": "string",
-      "maxLength": 32
-    },
-    "Button2": {
-      "type": "string",
-      "maxLength": 32
-    },
-    "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "Text": {
       "type": "blocks"
-    },
-    "BgImage": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
     },
     "BgFilterOpacity": {
       "type": "decimal",
@@ -64,6 +41,21 @@
       "default": 0.5,
       "max": 1,
       "min": 0
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.image"
+    },
+    "BgImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.image"
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.button"
     }
   }
 }

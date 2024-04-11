@@ -26,14 +26,6 @@
     "Text": {
       "type": "blocks"
     },
-    "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "Caption": {
       "type": "string"
     },
@@ -41,24 +33,15 @@
       "type": "integer",
       "required": true
     },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.image"
+    },
     "BgImage": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "BgImageOpacity": {
-      "type": "decimal",
-      "default": 0.5,
-      "max": 1,
-      "min": 0
-    },
-    "BgFilterOpacity": {
-      "type": "decimal",
-      "default": 0.5,
-      "max": 1,
-      "min": 0
+      "type": "component",
+      "repeatable": false,
+      "component": "common.image"
     }
   }
 }

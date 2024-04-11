@@ -817,7 +817,8 @@ export interface ApiBrandBrand extends Schema.CollectionType {
       Attribute.CustomField<'plugin::color-picker.color'>;
     Primary: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    Font: Attribute.Component<'common.font'>;
+    Fonts: Attribute.Component<'common.font', true>;
+    CompanyName: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -855,29 +856,11 @@ export interface ApiContactContact extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 99;
       }>;
-    BgImage: Attribute.Media;
-    BgImageOpacity: Attribute.Decimal &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-          max: 1;
-        },
-        number
-      > &
-      Attribute.DefaultTo<0.5>;
-    BgFilterOpacity: Attribute.Decimal &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-          max: 1;
-        },
-        number
-      > &
-      Attribute.DefaultTo<0.5>;
     Fields: Attribute.JSON;
     SendTo: Attribute.Email &
       Attribute.Required &
       Attribute.DefaultTo<'dan@sunkenstudio.com'>;
+    BgImage: Attribute.Component<'common.image'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -964,17 +947,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    Button1: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 32;
-      }>;
-    Button2: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 32;
-      }>;
-    Image: Attribute.Media;
     Text: Attribute.Blocks;
-    BgImage: Attribute.Media;
     BgFilterOpacity: Attribute.Decimal &
       Attribute.SetMinMax<
         {
@@ -993,6 +966,9 @@ export interface ApiHeroHero extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<0.5>;
+    Image: Attribute.Component<'common.image'>;
+    BgImage: Attribute.Component<'common.image'>;
+    Buttons: Attribute.Component<'common.button', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1027,28 +1003,10 @@ export interface ApiSectionSection extends Schema.CollectionType {
         maxLength: 255;
       }>;
     Text: Attribute.Blocks;
-    Image: Attribute.Media;
     Caption: Attribute.String;
     SortOrder: Attribute.Integer & Attribute.Required;
-    BgImage: Attribute.Media;
-    BgImageOpacity: Attribute.Decimal &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-          max: 1;
-        },
-        number
-      > &
-      Attribute.DefaultTo<0.5>;
-    BgFilterOpacity: Attribute.Decimal &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-          max: 1;
-        },
-        number
-      > &
-      Attribute.DefaultTo<0.5>;
+    Image: Attribute.Component<'common.image'>;
+    BgImage: Attribute.Component<'common.image'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
