@@ -19,26 +19,6 @@
       "unique": true,
       "private": true
     },
-    "BgImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "BgImageOpacity": {
-      "type": "decimal",
-      "max": 1,
-      "min": 0,
-      "default": 0.5
-    },
-    "BgFilterOpacity": {
-      "type": "decimal",
-      "default": 0.5,
-      "max": 1,
-      "min": 0
-    },
     "Fields": {
       "type": "json"
     },
@@ -46,6 +26,11 @@
       "type": "email",
       "default": "dan@sunkenstudio.com",
       "required": true
+    },
+    "BgImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.image"
     }
   }
 }
