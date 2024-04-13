@@ -43,6 +43,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::contact.contact"
+    },
+    "config": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::config.config"
     }
   }
 }
