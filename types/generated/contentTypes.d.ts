@@ -837,6 +837,38 @@ export interface ApiBrandBrand extends Schema.CollectionType {
   };
 }
 
+export interface ApiConfigConfig extends Schema.CollectionType {
+  collectionName: 'configs';
+  info: {
+    singularName: 'config';
+    pluralName: 'configs';
+    displayName: 'Config';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    IsUnderConstruction: Attribute.Boolean & Attribute.DefaultTo<true>;
+    IsMaintenanceMode: Attribute.Boolean & Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::config.config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::config.config',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Schema.CollectionType {
   collectionName: 'contacts';
   info: {
@@ -1061,6 +1093,11 @@ export interface ApiSiteSite extends Schema.CollectionType {
       'oneToOne',
       'api::contact.contact'
     >;
+    config: Attribute.Relation<
+      'api::site.site',
+      'oneToOne',
+      'api::config.config'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1090,6 +1127,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::brand.brand': ApiBrandBrand;
+      'api::config.config': ApiConfigConfig;
       'api::contact.contact': ApiContactContact;
       'api::footer.footer': ApiFooterFooter;
       'api::hero.hero': ApiHeroHero;
