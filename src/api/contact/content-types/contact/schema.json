@@ -31,6 +31,19 @@
       "type": "component",
       "repeatable": false,
       "component": "common.image"
+    },
+    "Header": {
+      "type": "string"
+    },
+    "BgColor": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ]
     }
   }
 }

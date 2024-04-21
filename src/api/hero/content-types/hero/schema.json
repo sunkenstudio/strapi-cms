@@ -56,6 +56,13 @@
       "type": "component",
       "repeatable": true,
       "component": "common.button"
+    },
+    "Variant": {
+      "type": "enumeration",
+      "enum": [
+        "leftAligned",
+        "centerAligned"
+      ]
     }
   }
 }

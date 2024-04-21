@@ -893,6 +893,10 @@ export interface ApiContactContact extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<'dan@sunkenstudio.com'>;
     BgImage: Attribute.Component<'common.image'>;
+    Header: Attribute.String;
+    BgColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1001,6 +1005,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
     Image: Attribute.Component<'common.image'>;
     BgImage: Attribute.Component<'common.image'>;
     Buttons: Attribute.Component<'common.button', true>;
+    Variant: Attribute.Enumeration<['leftAligned', 'centerAligned']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1039,6 +1044,11 @@ export interface ApiSectionSection extends Schema.CollectionType {
     SortOrder: Attribute.Integer & Attribute.Required;
     Image: Attribute.Component<'common.image'>;
     BgImage: Attribute.Component<'common.image'>;
+    BgColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
+    Variant: Attribute.Enumeration<['left', 'right']> &
+      Attribute.DefaultTo<'left'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

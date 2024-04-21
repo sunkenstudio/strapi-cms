@@ -27,25 +27,32 @@
     "Icon": {
       "type": "string"
     },
-    "TextColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+    "Border": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.border"
+    },
+    "Color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ]
     },
     "BgColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ]
     },
-    "BorderColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "BorderWidth": {
-      "type": "string"
-    },
-    "BorderRadius": {
+    "Shadow": {
       "type": "string"
     }
   }

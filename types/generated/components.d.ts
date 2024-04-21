@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface CommonBrandColor extends Schema.Component {
+  collectionName: 'components_common_brand_colors';
+  info: {
+    displayName: 'BrandColor';
+    icon: 'brush';
+  };
+  attributes: {
+    Color: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
+  };
+}
+
 export interface CommonButton extends Schema.Component {
   collectionName: 'components_common_buttons';
   info: {
@@ -14,14 +27,14 @@ export interface CommonButton extends Schema.Component {
     Text: Attribute.String;
     Href: Attribute.String;
     Icon: Attribute.String;
-    TextColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    BgColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    BorderColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    BorderWidth: Attribute.String;
-    BorderRadius: Attribute.String;
+    Border: Attribute.Component<'styles.border'>;
+    Color: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
+    BgColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
+    Shadow: Attribute.String;
   };
 }
 
@@ -43,25 +56,42 @@ export interface CommonImage extends Schema.Component {
   info: {
     displayName: 'Image';
     icon: 'landscape';
+    description: '';
   };
   attributes: {
     Media: Attribute.Media & Attribute.Required;
     Alt: Attribute.String;
-    BorderWidth: Attribute.String;
-    BorderColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    GrayscalePercent: Attribute.Integer &
-      Attribute.SetMinMax<
-        {
-          min: 0;
-          max: 100;
-        },
-        number
-      > &
-      Attribute.DefaultTo<0>;
-    FilterColor: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    FilterOpacity: Attribute.Decimal &
+    Border: Attribute.Component<'styles.border'>;
+    Filter: Attribute.Component<'styles.filter'>;
+  };
+}
+
+export interface StylesBorder extends Schema.Component {
+  collectionName: 'components_styles_borders';
+  info: {
+    displayName: 'Border';
+    icon: 'brush';
+  };
+  attributes: {
+    Width: Attribute.String;
+    Color: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'dark', 'light']
+    >;
+    Radius: Attribute.String;
+  };
+}
+
+export interface StylesFilter extends Schema.Component {
+  collectionName: 'components_styles_filters';
+  info: {
+    displayName: 'Filter';
+    icon: 'brush';
+  };
+  attributes: {
+    Color: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
+    Opacity: Attribute.Decimal &
       Attribute.SetMinMax<
         {
           min: 0;
@@ -70,16 +100,27 @@ export interface CommonImage extends Schema.Component {
         number
       > &
       Attribute.DefaultTo<0>;
-    BorderRadius: Attribute.String;
+    Grayscale: Attribute.Integer &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 100;
+        },
+        number
+      > &
+      Attribute.DefaultTo<0>;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'common.brand-color': CommonBrandColor;
       'common.button': CommonButton;
       'common.font': CommonFont;
       'common.image': CommonImage;
+      'styles.border': StylesBorder;
+      'styles.filter': StylesFilter;
     }
   }
 }
