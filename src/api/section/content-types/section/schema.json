@@ -42,6 +42,24 @@
       "type": "component",
       "repeatable": false,
       "component": "common.image"
+    },
+    "BgColor": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ]
+    },
+    "Variant": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "left"
     }
   }
 }

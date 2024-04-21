@@ -2,48 +2,31 @@
   "collectionName": "components_common_images",
   "info": {
     "displayName": "Image",
-    "icon": "landscape"
+    "icon": "landscape",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Media": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "Alt": {
       "type": "string"
     },
-    "BorderWidth": {
-      "type": "string"
+    "Border": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.border"
     },
-    "BorderColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "GrayscalePercent": {
-      "type": "integer",
-      "max": 100,
-      "min": 0,
-      "default": 0
-    },
-    "FilterColor": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "FilterOpacity": {
-      "type": "decimal",
-      "min": 0,
-      "max": 1,
-      "default": 0
-    },
-    "BorderRadius": {
-      "type": "string"
+    "Filter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.filter"
     }
   }
 }

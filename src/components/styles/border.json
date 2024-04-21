@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_styles_borders",
+  "info": {
+    "displayName": "Border",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "Width": {
+      "type": "string"
+    },
+    "Color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "dark",
+        "light"
+      ]
+    },
+    "Radius": {
+      "type": "string"
+    }
+  }
+}

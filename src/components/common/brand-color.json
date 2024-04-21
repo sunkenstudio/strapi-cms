@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_common_brand_colors",
+  "info": {
+    "displayName": "BrandColor",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "Color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ]
+    }
+  }
+}
