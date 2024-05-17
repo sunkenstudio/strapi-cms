@@ -1005,7 +1005,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
     Image: Attribute.Component<'common.image'>;
     BgImage: Attribute.Component<'common.image'>;
     Buttons: Attribute.Component<'common.button', true>;
-    Variant: Attribute.Enumeration<['leftAligned', 'centerAligned']>;
+    Variant: Attribute.Enumeration<['leftAligned', 'centerAligned', 'split']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
