@@ -61,7 +61,8 @@
       "type": "enumeration",
       "enum": [
         "leftAligned",
-        "centerAligned"
+        "centerAligned",
+        "split"
       ]
     }
   }
