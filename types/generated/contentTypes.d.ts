@@ -1047,7 +1047,9 @@ export interface ApiSectionSection extends Schema.CollectionType {
     BgColor: Attribute.Enumeration<
       ['primary', 'secondary', 'accent', 'light', 'dark']
     >;
-    Variant: Attribute.Enumeration<['left', 'right']> &
+    Variant: Attribute.Enumeration<
+      ['left', 'right', 'splitLeft', 'splitRight']
+    > &
       Attribute.DefaultTo<'left'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
