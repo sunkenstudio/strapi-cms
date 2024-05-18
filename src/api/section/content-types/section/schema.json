@@ -57,7 +57,9 @@
       "type": "enumeration",
       "enum": [
         "left",
-        "right"
+        "right",
+        "splitLeft",
+        "splitRight"
       ],
       "default": "left"
     }
