@@ -48,6 +48,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::config.config"
+    },
+    "carousel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::carousel.carousel"
     }
   }
 }

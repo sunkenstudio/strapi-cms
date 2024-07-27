@@ -1142,6 +1142,11 @@ export interface ApiSiteSite extends Schema.CollectionType {
       'oneToOne',
       'api::config.config'
     >;
+    carousel: Attribute.Relation<
+      'api::site.site',
+      'oneToOne',
+      'api::carousel.carousel'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
