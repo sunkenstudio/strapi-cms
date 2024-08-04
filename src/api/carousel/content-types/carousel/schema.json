@@ -4,23 +4,27 @@
   "info": {
     "singularName": "carousel",
     "pluralName": "carousels",
-    "displayName": "Carousel"
+    "displayName": "Carousel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "images": {
+    "Images": {
       "type": "component",
       "repeatable": true,
       "component": "common.image"
     },
-    "transition_time": {
+    "TransitionTime": {
       "type": "integer"
     },
-    "display_arrows": {
+    "DisplayArrows": {
       "type": "boolean"
+    },
+    "Name": {
+      "type": "string"
     }
   }
 }

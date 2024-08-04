@@ -843,14 +843,16 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
     singularName: 'carousel';
     pluralName: 'carousels';
     displayName: 'Carousel';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    images: Attribute.Component<'common.image', true>;
-    transition_time: Attribute.Integer;
-    display_arrows: Attribute.Boolean;
+    Images: Attribute.Component<'common.image', true>;
+    TransitionTime: Attribute.Integer;
+    DisplayArrows: Attribute.Boolean;
+    Name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
