@@ -853,6 +853,7 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
     TransitionTime: Attribute.Integer;
     DisplayArrows: Attribute.Boolean;
     Name: Attribute.String;
+    showCounter: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

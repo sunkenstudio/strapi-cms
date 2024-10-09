@@ -25,6 +25,9 @@
     },
     "Name": {
       "type": "string"
+    },
+    "showCounter": {
+      "type": "boolean"
     }
   }
 }
