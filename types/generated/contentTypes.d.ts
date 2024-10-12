@@ -854,6 +854,12 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
     DisplayArrows: Attribute.Boolean & Attribute.DefaultTo<true>;
     Name: Attribute.String;
     DisplayCounter: Attribute.Boolean & Attribute.DefaultTo<true>;
+    AspectRatioWidth: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<4>;
+    AspectRatioHeight: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<3>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
