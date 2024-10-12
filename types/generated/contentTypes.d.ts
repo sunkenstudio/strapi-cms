@@ -850,10 +850,10 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
   };
   attributes: {
     Images: Attribute.Component<'common.image', true>;
-    TransitionTime: Attribute.Integer;
-    DisplayArrows: Attribute.Boolean;
+    TransitionTime: Attribute.Integer & Attribute.DefaultTo<3000>;
+    DisplayArrows: Attribute.Boolean & Attribute.DefaultTo<true>;
     Name: Attribute.String;
-    showCounter: Attribute.Boolean;
+    DisplayCounter: Attribute.Boolean & Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

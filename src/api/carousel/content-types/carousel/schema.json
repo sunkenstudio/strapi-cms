@@ -18,16 +18,19 @@
       "component": "common.image"
     },
     "TransitionTime": {
-      "type": "integer"
+      "type": "integer",
+      "default": 3000
     },
     "DisplayArrows": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "Name": {
       "type": "string"
     },
-    "showCounter": {
-      "type": "boolean"
+    "DisplayCounter": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
