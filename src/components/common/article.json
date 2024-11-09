@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_common_articles",
+  "info": {
+    "displayName": "Article"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": false
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}
