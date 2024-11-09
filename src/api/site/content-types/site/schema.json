@@ -48,6 +48,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::config.config"
+    },
+    "image_scroll": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::image-scroll.image-scroll"
     }
   }
 }

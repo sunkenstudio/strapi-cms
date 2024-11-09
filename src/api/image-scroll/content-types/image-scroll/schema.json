@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "image_scrolls",
+  "info": {
+    "singularName": "image-scroll",
+    "pluralName": "image-scrolls",
+    "displayName": "Image Scroll"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "BgColor": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ],
+      "default": "light"
+    },
+    "Color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ],
+      "default": "dark"
+    },
+    "Header": {
+      "type": "string"
+    },
+    "Speed": {
+      "type": "enumeration",
+      "enum": [
+        "slow",
+        "normal",
+        "fast"
+      ],
+      "default": "normal"
+    },
+    "Images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
