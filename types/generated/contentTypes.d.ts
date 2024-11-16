@@ -837,6 +837,47 @@ export interface ApiBrandBrand extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarouselCarousel extends Schema.CollectionType {
+  collectionName: 'carousels';
+  info: {
+    singularName: 'carousel';
+    pluralName: 'carousels';
+    displayName: 'Carousel';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Images: Attribute.Component<'common.image', true>;
+    TransitionTime: Attribute.Integer & Attribute.DefaultTo<3000>;
+    DisplayArrows: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Name: Attribute.String;
+    DisplayCounter: Attribute.Boolean & Attribute.DefaultTo<true>;
+    AspectRatioWidth: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<4>;
+    AspectRatioHeight: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<3>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiConfigConfig extends Schema.CollectionType {
   collectionName: 'configs';
   info: {
@@ -1058,6 +1099,44 @@ export interface ApiImageScrollImageScroll extends Schema.CollectionType {
   };
 }
 
+export interface ApiProjectSectionProjectSection extends Schema.CollectionType {
+  collectionName: 'project_sections';
+  info: {
+    singularName: 'project-section';
+    pluralName: 'project-sections';
+    displayName: 'ProjectSection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Header: Attribute.String;
+    BgColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
+    Color: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    >;
+    Articles: Attribute.Component<'common.article', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project-section.project-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project-section.project-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionSection extends Schema.CollectionType {
   collectionName: 'sections';
   info: {
@@ -1157,6 +1236,16 @@ export interface ApiSiteSite extends Schema.CollectionType {
       'oneToOne',
       'api::image-scroll.image-scroll'
     >;
+    project_section: Attribute.Relation<
+      'api::site.site',
+      'oneToOne',
+      'api::project-section.project-section'
+    >;
+    carousel: Attribute.Relation<
+      'api::site.site',
+      'oneToOne',
+      'api::carousel.carousel'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1186,11 +1275,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::brand.brand': ApiBrandBrand;
+      'api::carousel.carousel': ApiCarouselCarousel;
       'api::config.config': ApiConfigConfig;
       'api::contact.contact': ApiContactContact;
       'api::footer.footer': ApiFooterFooter;
       'api::hero.hero': ApiHeroHero;
       'api::image-scroll.image-scroll': ApiImageScrollImageScroll;
+      'api::project-section.project-section': ApiProjectSectionProjectSection;
       'api::section.section': ApiSectionSection;
       'api::site.site': ApiSiteSite;
     }

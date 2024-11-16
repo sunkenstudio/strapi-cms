@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_sections",
+  "info": {
+    "singularName": "project-section",
+    "pluralName": "project-sections",
+    "displayName": "ProjectSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Header": {
+      "type": "string"
+    },
+    "BgColor": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ]
+    },
+    "Color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "light",
+        "dark"
+      ]
+    },
+    "Articles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.article"
+    }
+  }
+}

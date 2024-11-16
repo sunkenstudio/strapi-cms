@@ -53,6 +53,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::image-scroll.image-scroll"
+    },
+    "project_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-section.project-section"
+    },
+    "carousel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::carousel.carousel"
     }
   }
 }
