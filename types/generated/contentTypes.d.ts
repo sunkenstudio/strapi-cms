@@ -1057,6 +1057,48 @@ export interface ApiHeroHero extends Schema.CollectionType {
   };
 }
 
+export interface ApiImageScrollImageScroll extends Schema.CollectionType {
+  collectionName: 'image_scrolls';
+  info: {
+    singularName: 'image-scroll';
+    pluralName: 'image-scrolls';
+    displayName: 'Image Scroll';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required & Attribute.Unique;
+    BgColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    > &
+      Attribute.DefaultTo<'light'>;
+    Color: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'light', 'dark']
+    > &
+      Attribute.DefaultTo<'dark'>;
+    Header: Attribute.String;
+    Speed: Attribute.Enumeration<['slow', 'normal', 'fast']> &
+      Attribute.DefaultTo<'normal'>;
+    Images: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::image-scroll.image-scroll',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::image-scroll.image-scroll',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectSectionProjectSection extends Schema.CollectionType {
   collectionName: 'project_sections';
   info: {
@@ -1189,6 +1231,11 @@ export interface ApiSiteSite extends Schema.CollectionType {
       'oneToOne',
       'api::config.config'
     >;
+    image_scroll: Attribute.Relation<
+      'api::site.site',
+      'oneToOne',
+      'api::image-scroll.image-scroll'
+    >;
     project_section: Attribute.Relation<
       'api::site.site',
       'oneToOne',
@@ -1233,6 +1280,7 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::footer.footer': ApiFooterFooter;
       'api::hero.hero': ApiHeroHero;
+      'api::image-scroll.image-scroll': ApiImageScrollImageScroll;
       'api::project-section.project-section': ApiProjectSectionProjectSection;
       'api::section.section': ApiSectionSection;
       'api::site.site': ApiSiteSite;
