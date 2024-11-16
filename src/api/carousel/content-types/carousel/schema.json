@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carousels",
+  "info": {
+    "singularName": "carousel",
+    "pluralName": "carousels",
+    "displayName": "Carousel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.image"
+    },
+    "TransitionTime": {
+      "type": "integer",
+      "default": 3000
+    },
+    "DisplayArrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "Name": {
+      "type": "string"
+    },
+    "DisplayCounter": {
+      "type": "boolean",
+      "default": true
+    },
+    "AspectRatioWidth": {
+      "type": "integer",
+      "default": 4,
+      "required": true,
+      "notNullable": true
+    },
+    "AspectRatioHeight": {
+      "type": "integer",
+      "default": 3,
+      "required": true,
+      "notNullable": true
+    }
+  }
+}
