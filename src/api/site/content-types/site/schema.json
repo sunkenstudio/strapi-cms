@@ -53,6 +53,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::project-section.project-section"
+    },
+    "carousel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::carousel.carousel"
     }
   }
 }
