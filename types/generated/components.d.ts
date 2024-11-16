@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface CommonArticle extends Schema.Component {
+  collectionName: 'components_common_articles';
+  info: {
+    displayName: 'Article';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Blocks;
+    Images: Attribute.Media;
+    Link: Attribute.String;
+  };
+}
+
 export interface CommonBrandColor extends Schema.Component {
   collectionName: 'components_common_brand_colors';
   info: {
@@ -115,6 +128,7 @@ export interface StylesFilter extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'common.article': CommonArticle;
       'common.brand-color': CommonBrandColor;
       'common.button': CommonButton;
       'common.font': CommonFont;

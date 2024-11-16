@@ -49,6 +49,11 @@
       "relation": "oneToOne",
       "target": "api::config.config"
     },
+    "project_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project-section.project-section"
+    },
     "carousel": {
       "type": "relation",
       "relation": "oneToOne",
