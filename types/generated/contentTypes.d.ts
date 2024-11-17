@@ -956,6 +956,66 @@ export interface ApiContactContact extends Schema.CollectionType {
   };
 }
 
+export interface ApiFeatureSectionFeatureSection extends Schema.CollectionType {
+  collectionName: 'feature_sections';
+  info: {
+    singularName: 'feature-section';
+    pluralName: 'feature-sections';
+    displayName: 'Feature Section';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String & Attribute.Required & Attribute.Unique;
+    Header: Attribute.String;
+    Description: Attribute.String;
+    BacksplashColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'dark', 'light']
+    > &
+      Attribute.DefaultTo<'dark'>;
+    Color: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'dark', 'light']
+    > &
+      Attribute.DefaultTo<'dark'>;
+    Features: Attribute.Component<'common.feature', true> & Attribute.Required;
+    BgColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'dark', 'light']
+    > &
+      Attribute.DefaultTo<'light'>;
+    IconColor: Attribute.Enumeration<
+      ['primary', 'secondary', 'accent', 'dark', 'light']
+    > &
+      Attribute.DefaultTo<'light'>;
+    NumColumns: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 5;
+        },
+        number
+      > &
+      Attribute.DefaultTo<3>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feature-section.feature-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feature-section.feature-section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.CollectionType {
   collectionName: 'footers';
   info: {
@@ -1246,6 +1306,11 @@ export interface ApiSiteSite extends Schema.CollectionType {
       'oneToOne',
       'api::carousel.carousel'
     >;
+    feature_section: Attribute.Relation<
+      'api::site.site',
+      'oneToOne',
+      'api::feature-section.feature-section'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1278,6 +1343,7 @@ declare module '@strapi/types' {
       'api::carousel.carousel': ApiCarouselCarousel;
       'api::config.config': ApiConfigConfig;
       'api::contact.contact': ApiContactContact;
+      'api::feature-section.feature-section': ApiFeatureSectionFeatureSection;
       'api::footer.footer': ApiFooterFooter;
       'api::hero.hero': ApiHeroHero;
       'api::image-scroll.image-scroll': ApiImageScrollImageScroll;
