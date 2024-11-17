@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feature_sections",
+  "info": {
+    "singularName": "feature-section",
+    "pluralName": "feature-sections",
+    "displayName": "Feature Section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Header": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "BacksplashColor": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "dark",
+        "light"
+      ],
+      "default": "dark"
+    },
+    "Color": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "dark",
+        "light"
+      ],
+      "default": "dark"
+    },
+    "Features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.feature",
+      "required": true
+    },
+    "BgColor": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "dark",
+        "light"
+      ],
+      "default": "light"
+    },
+    "IconColor": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "accent",
+        "dark",
+        "light"
+      ],
+      "default": "light"
+    },
+    "NumColumns": {
+      "type": "integer",
+      "default": 3,
+      "max": 5,
+      "min": 1,
+      "required": true
+    }
+  }
+}

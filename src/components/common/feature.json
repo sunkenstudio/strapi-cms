@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_common_features",
+  "info": {
+    "displayName": "Feature",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string",
+      "required": true
+    },
+    "Blurb": {
+      "type": "string",
+      "required": true
+    },
+    "Icon": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

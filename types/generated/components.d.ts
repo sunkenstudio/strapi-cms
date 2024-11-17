@@ -51,6 +51,19 @@ export interface CommonButton extends Schema.Component {
   };
 }
 
+export interface CommonFeature extends Schema.Component {
+  collectionName: 'components_common_features';
+  info: {
+    displayName: 'Feature';
+    description: '';
+  };
+  attributes: {
+    Header: Attribute.String & Attribute.Required;
+    Blurb: Attribute.String & Attribute.Required;
+    Icon: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface CommonFont extends Schema.Component {
   collectionName: 'components_common_fonts';
   info: {
@@ -131,6 +144,7 @@ declare module '@strapi/types' {
       'common.article': CommonArticle;
       'common.brand-color': CommonBrandColor;
       'common.button': CommonButton;
+      'common.feature': CommonFeature;
       'common.font': CommonFont;
       'common.image': CommonImage;
       'styles.border': StylesBorder;
