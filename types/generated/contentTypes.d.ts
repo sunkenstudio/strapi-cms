@@ -819,6 +819,7 @@ export interface ApiBrandBrand extends Schema.CollectionType {
       Attribute.CustomField<'plugin::color-picker.color'>;
     Fonts: Attribute.Component<'common.font', true>;
     CompanyName: Attribute.String;
+    Favicon: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
