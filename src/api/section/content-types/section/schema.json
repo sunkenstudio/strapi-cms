@@ -31,7 +31,9 @@
     },
     "SortOrder": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 0,
+      "default": 1
     },
     "Image": {
       "type": "component",

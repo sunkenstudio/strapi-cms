@@ -44,6 +44,12 @@
         "light",
         "dark"
       ]
+    },
+    "SortOrder": {
+      "type": "integer",
+      "required": true,
+      "default": 99,
+      "min": 0
     }
   }
 }
