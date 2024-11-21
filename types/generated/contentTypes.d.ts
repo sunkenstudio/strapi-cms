@@ -861,6 +861,15 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
     AspectRatioHeight: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<3>;
+    SortOrder: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -939,6 +948,15 @@ export interface ApiContactContact extends Schema.CollectionType {
     BgColor: Attribute.Enumeration<
       ['primary', 'secondary', 'accent', 'light', 'dark']
     >;
+    SortOrder: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<99>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -999,6 +1017,15 @@ export interface ApiFeatureSectionFeatureSection extends Schema.CollectionType {
         number
       > &
       Attribute.DefaultTo<3>;
+    SortOrder: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1108,6 +1135,15 @@ export interface ApiHeroHero extends Schema.CollectionType {
     BgImage: Attribute.Component<'common.image'>;
     Buttons: Attribute.Component<'common.button', true>;
     Variant: Attribute.Enumeration<['leftAligned', 'centerAligned', 'split']>;
+    SortOrder: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1124,6 +1160,7 @@ export interface ApiImageScrollImageScroll extends Schema.CollectionType {
     singularName: 'image-scroll';
     pluralName: 'image-scrolls';
     displayName: 'Image Scroll';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1142,6 +1179,15 @@ export interface ApiImageScrollImageScroll extends Schema.CollectionType {
     Speed: Attribute.Enumeration<['slow', 'normal', 'fast']> &
       Attribute.DefaultTo<'normal'>;
     Images: Attribute.Media & Attribute.Required;
+    SortOrder: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1166,6 +1212,7 @@ export interface ApiProjectSectionProjectSection extends Schema.CollectionType {
     singularName: 'project-section';
     pluralName: 'project-sections';
     displayName: 'ProjectSection';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1180,6 +1227,15 @@ export interface ApiProjectSectionProjectSection extends Schema.CollectionType {
       ['primary', 'secondary', 'accent', 'light', 'dark']
     >;
     Articles: Attribute.Component<'common.article', true>;
+    SortOrder: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1223,7 +1279,15 @@ export interface ApiSectionSection extends Schema.CollectionType {
       }>;
     Text: Attribute.Blocks;
     Caption: Attribute.String;
-    SortOrder: Attribute.Integer & Attribute.Required;
+    SortOrder: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
     Image: Attribute.Component<'common.image'>;
     BgImage: Attribute.Component<'common.image'>;
     BgColor: Attribute.Enumeration<

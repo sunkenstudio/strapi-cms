@@ -4,7 +4,8 @@
   "info": {
     "singularName": "image-scroll",
     "pluralName": "image-scrolls",
-    "displayName": "Image Scroll"
+    "displayName": "Image Scroll",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -51,12 +52,18 @@
       "default": "normal"
     },
     "Images": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "SortOrder": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "min": 0
     }
   }
 }
