@@ -1,15 +1,15 @@
 {
-  "collectionName": "components_styles_borders",
+  "collectionName": "components_common_borders",
   "info": {
     "displayName": "Border",
-    "icon": "brush"
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Width": {
+    "width": {
       "type": "string"
     },
-    "Color": {
+    "color": {
       "type": "enumeration",
       "enum": [
         "primary",
@@ -19,7 +19,7 @@
         "light"
       ]
     },
-    "Radius": {
+    "radius": {
       "type": "string"
     }
   }

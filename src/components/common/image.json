@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "Media": {
+    "media": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -15,18 +15,18 @@
         "images"
       ]
     },
-    "Alt": {
+    "alt": {
       "type": "string"
     },
-    "Border": {
+    "border": {
       "type": "component",
       "repeatable": false,
-      "component": "styles.border"
+      "component": "common.border"
     },
-    "Filter": {
+    "filter": {
       "type": "component",
       "repeatable": false,
-      "component": "styles.filter"
+      "component": "common.filter"
     }
   }
 }
