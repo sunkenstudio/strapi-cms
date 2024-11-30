@@ -27,11 +27,6 @@
     "Icon": {
       "type": "string"
     },
-    "Border": {
-      "type": "component",
-      "repeatable": false,
-      "component": "styles.border"
-    },
     "Color": {
       "type": "enumeration",
       "enum": [
@@ -54,6 +49,11 @@
     },
     "Shadow": {
       "type": "string"
+    },
+    "Border": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.border"
     }
   }
 }
